@@ -459,7 +459,7 @@ h2 {
 .tile-humanoid { grid-column: span 7; min-height: 460px; }
 .tile-unitree { grid-column: span 5; min-height: 460px; }
 .tile-arms, .tile-sim { grid-column: span 6; min-height: 340px; }
-.tile-counter, .tile-red, .tile-me { grid-column: span 4; min-height: 280px; }
+.tile-counter, .tile-me { grid-column: span 6; min-height: 280px; }
 .cap {
   position: absolute;
   left: 0; right: 0; bottom: 0;
@@ -620,7 +620,7 @@ dialog button {
   .svc { grid-template-columns: 40px 1fr; }
   .svc .who, .svc .out { grid-column: 2; }
   .stats, .metrics, .steps { grid-template-columns: 1fr 1fr; }
-  .tile-humanoid, .tile-unitree, .tile-arms, .tile-sim, .tile-counter, .tile-red, .tile-me {
+  .tile-humanoid, .tile-unitree, .tile-arms, .tile-sim, .tile-counter, .tile-me {
     grid-column: span 12;
     min-height: 280px;
   }
