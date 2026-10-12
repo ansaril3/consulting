@@ -1,10 +1,10 @@
 const titles = {
-  ru: "Ансар Жалялов — робототехника, физический AI, CTO",
-  en: "Ansar Zhalyalov — Robotics, Physical AI, CTO",
+  ru: "Ансар Жалялов — роботы, AI, технический руководитель",
+  en: "Ansar Zhalyalov — robots, AI, technical leader",
 };
 const descriptions = {
-  ru: "Технический руководитель. Запускаю робототехнику и физический AI: команда, архитектура, поставщики в Китае и работающий пилот. Консалтинг и роль CTO, CIO, Head of Robotics.",
-  en: "Technical leader. I launch robotics and physical AI: the team, the architecture, suppliers in China, and a pilot that reaches production. Consulting, and a CTO, CIO, or Head of Robotics mandate.",
+  ru: "Запускаю роботов и перевожу разработку компании на AI: агенты в Cursor и Claude, быстрее выпуск, меньше затрат на ИТ. Консалтинг и роли CTO, CIO, Head of Robotics.",
+  en: "I launch robots and move a company's engineering onto AI: agents in Cursor and Claude, faster delivery, lower IT cost. Consulting, and CTO, CIO, or Head of Robotics roles.",
 };
 const errors = {
   ru: {
@@ -100,13 +100,20 @@ window.addEventListener("scroll", onScroll, { passive: true });
 
 if (heroVideo && videoToggle) {
   heroVideo.muted = true;
+  heroVideo.playbackRate = 1.5;
+  heroVideo.addEventListener("loadedmetadata", () => {
+    heroVideo.playbackRate = 1.5;
+  });
   if (reduceMotion) heroVideo.pause();
   else heroVideo.play().catch(() => {});
   videoToggle.addEventListener("click", () => {
     if (heroVideo.paused) heroVideo.play();
     else heroVideo.pause();
   });
-  heroVideo.addEventListener("play", syncVideoToggle);
+  heroVideo.addEventListener("play", () => {
+    heroVideo.playbackRate = 1.5;
+    syncVideoToggle();
+  });
   heroVideo.addEventListener("pause", syncVideoToggle);
 }
 
