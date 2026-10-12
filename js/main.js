@@ -3,8 +3,8 @@ const titles = {
   en: "Ansar Zhalyalov — robots, AI, technical leader",
 };
 const descriptions = {
-  ru: "Запускаю роботов и перевожу разработку компании на AI: агенты в Cursor и Claude, быстрее выпуск, меньше затрат на ИТ. Консалтинг и роли CTO, CIO, Head of Robotics.",
-  en: "I launch robots and move a company's engineering onto AI: agents in Cursor and Claude, faster delivery, lower IT cost. Consulting, and CTO, CIO, or Head of Robotics roles.",
+  ru: "Перевожу разработку компании на AI и запускаю роботов: агенты в Cursor и Claude, быстрее выпуск, меньше затрат на ИТ. Консалтинг и роли CTO, CIO, Head of Robotics.",
+  en: "I move a company's engineering onto AI and launch robots: agents in Cursor and Claude, faster delivery, lower IT cost. Consulting, and CTO, CIO, or Head of Robotics roles.",
 };
 const errors = {
   ru: {

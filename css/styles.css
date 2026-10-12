@@ -320,6 +320,12 @@ h2 {
 }
 .facts dd { margin: 0; }
 .facts a { font-weight: 700; }
+.tg {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.tg svg { width: 16px; height: 16px; flex: none; }
 .trust {
   display: flex;
   flex-wrap: wrap;
@@ -376,7 +382,6 @@ h2 {
 }
 .role ul { margin: 18px 0; padding-left: 18px; }
 .role li { margin: 6px 0; }
-.role .meta { font-size: 14px; }
 .section-lead { max-width: 44rem; margin: -12px 0 8px; color: var(--muted); }
 
 .svc {
