@@ -6,28 +6,7 @@ const descriptions = {
   ru: "Перевожу разработку компании на AI и запускаю роботов: агенты в Cursor и Claude, быстрее выпуск, меньше затрат на ИТ. Консалтинг и роли CTO, CIO, Head of Robotics.",
   en: "I move a company's engineering onto AI and launch robots: agents in Cursor and Claude, faster delivery, lower IT cost. Consulting, and CTO, CIO, or Head of Robotics roles.",
 };
-const errors = {
-  ru: {
-    name: "Укажите имя.",
-    contact: "Укажите контакт для ответа.",
-    type: "Выберите тип запроса.",
-    message: "Опишите задачу чуть подробнее.",
-    captcha: "Проверьте ответ на пример.",
-    consent: "Нужно согласие, чтобы отправить заявку.",
-  },
-  en: {
-    name: "Add your name.",
-    contact: "Add a contact for the reply.",
-    type: "Choose a request type.",
-    message: "Describe the task in a bit more detail.",
-    captcha: "Check the answer.",
-    consent: "Consent is required to send the request.",
-  },
-};
-
 let lang = document.documentElement.lang === "en" ? "en" : "ru";
-let captchaA = 0;
-let captchaB = 0;
 
 const heroVideo = document.querySelector("#hero-video");
 const videoToggle = document.querySelector("#video-toggle");
@@ -42,14 +21,6 @@ function syncVideoToggle() {
     : lang === "en" ? "Pause" : "Пауза";
 }
 
-function refreshCaptchaLabel() {
-  const label = document.querySelector("#captcha-label");
-  if (!label) return;
-  label.textContent = lang === "en"
-    ? `What is ${captchaA} + ${captchaB}?`
-    : `Сколько будет ${captchaA} + ${captchaB}?`;
-}
-
 function applyLang(next) {
   lang = next === "en" ? "en" : "ru";
   document.documentElement.lang = lang;
@@ -60,16 +31,9 @@ function applyLang(next) {
   document.querySelectorAll("[data-set-lang]").forEach((btn) => {
     btn.setAttribute("aria-pressed", String(btn.dataset.setLang === lang));
   });
-  document.querySelectorAll("[data-ph-ru]").forEach((el) => {
-    el.placeholder = el.getAttribute(lang === "en" ? "data-ph-en" : "data-ph-ru") || "";
-  });
-  document.querySelectorAll("option[data-ru]").forEach((opt) => {
-    opt.textContent = opt.getAttribute(lang === "en" ? "data-en" : "data-ru") || opt.textContent;
-  });
   document.querySelectorAll("[data-alt-ru]").forEach((el) => {
     el.alt = el.getAttribute(lang === "en" ? "data-alt-en" : "data-alt-ru") || "";
   });
-  refreshCaptchaLabel();
   syncVideoToggle();
 }
 
@@ -159,59 +123,5 @@ dialog.addEventListener("click", (event) => {
   if (event.target === dialog) dialog.close();
 });
 dialog.addEventListener("close", () => stage.replaceChildren());
-
-captchaA = 2 + Math.floor(Math.random() * 8);
-captchaB = 2 + Math.floor(Math.random() * 7);
-
-const form = document.querySelector("#request-form");
-const formError = document.querySelector("#form-error");
-const success = document.querySelector("#form-success");
-
-function mark(el, bad) {
-  el.classList.toggle("invalid", bad);
-  if (bad) el.setAttribute("aria-invalid", "true");
-  else el.removeAttribute("aria-invalid");
-}
-
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  if (form.website.value.trim()) return;
-
-  const name = form.name.value.trim();
-  const company = form.company.value.trim();
-  const contact = form.contact.value.trim();
-  const type = form.type.value;
-  const message = form.message.value.trim();
-  const answer = Number(form.captcha.value.trim());
-  const copy = errors[lang];
-  let error = "";
-
-  mark(form.name, !name);
-  mark(form.contact, !contact);
-  mark(form.type, !type);
-  mark(form.message, message.length < 10);
-  mark(form.captcha, answer !== captchaA + captchaB);
-
-  if (!name) error = copy.name;
-  else if (!contact) error = copy.contact;
-  else if (!type) error = copy.type;
-  else if (message.length < 10) error = copy.message;
-  else if (answer !== captchaA + captchaB) error = copy.captcha;
-  else if (!form.consent.checked) error = copy.consent;
-
-  formError.textContent = error;
-  if (error) return;
-
-  const typeLabel = form.type.selectedOptions[0].textContent;
-  const text = lang === "en"
-    ? `Hello! My name is ${name}${company ? `, ${company}` : ""}.\nRequest: ${typeLabel}\nContact: ${contact}\n\n${message}`
-    : `Здравствуйте! Меня зовут ${name}${company ? `, ${company}` : ""}.\nТип запроса: ${typeLabel}\nКонтакт: ${contact}\n\n${message}`;
-  const subject = lang === "en" ? `Website request: ${typeLabel}` : `Запрос с сайта: ${typeLabel}`;
-
-  document.querySelector("#wa-link").href = `https://wa.me/79653214872?text=${encodeURIComponent(text)}`;
-  document.querySelector("#mail-link").href = `mailto:ansaril3g@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
-  form.hidden = true;
-  success.hidden = false;
-});
 
 applyLang(lang);
