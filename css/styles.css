@@ -406,7 +406,18 @@ h2 {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  align-items: baseline;
+  align-items: center;
+}
+.case-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.case-name img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex: none;
 }
 .case-role { font-weight: 800; margin-bottom: 8px !important; }
 .case-when { color: var(--muted); font-size: 14px; font-weight: 700; }
