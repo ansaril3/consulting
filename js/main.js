@@ -1,10 +1,10 @@
 const titles = {
   ru: "Ансар Жалялов — роботы, AI, технический руководитель",
-  en: "Ansar Zhalyalov — robots, AI, technical leader",
+  en: "Ansar Zhalyalov — Robotics, AI, and Engineering Leadership",
 };
 const descriptions = {
   ru: "Перевожу разработку на AI и запускаю роботов: агенты в Cursor и Claude, быстрее выпуск, меньше затрат на ИТ. Консалтинг и роли CTO, CIO, Head of Robotics.",
-  en: "I move development onto AI and launch robots: agents in Cursor and Claude, faster delivery, lower IT cost. Consulting, and CTO, CIO, and Head of Robotics roles.",
+  en: "I get engineering teams working with AI and put robots into real operations: Cursor and Claude agents, faster releases, lower IT spend. Consulting, or a role as CTO, CIO, or Head of Robotics.",
 };
 let lang = document.documentElement.lang === "en" ? "en" : "ru";
 
@@ -21,10 +21,12 @@ function syncVideoToggle() {
     : lang === "en" ? "Pause" : "Пауза";
 }
 
-function applyLang(next) {
+function applyLang(next, persist) {
   lang = next === "en" ? "en" : "ru";
   document.documentElement.lang = lang;
-  try { localStorage.setItem("az-lang", lang); } catch (e) {}
+  if (persist) {
+    try { localStorage.setItem("az-lang-pref", lang); } catch (e) {}
+  }
   document.title = titles[lang];
   const meta = document.querySelector('meta[name="description"]');
   if (meta) meta.setAttribute("content", descriptions[lang]);
@@ -38,7 +40,7 @@ function applyLang(next) {
 }
 
 document.querySelectorAll("[data-set-lang]").forEach((btn) => {
-  btn.addEventListener("click", () => applyLang(btn.dataset.setLang));
+  btn.addEventListener("click", () => applyLang(btn.dataset.setLang, true));
 });
 
 const burger = document.querySelector(".burger");

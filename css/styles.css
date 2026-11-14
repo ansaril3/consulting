@@ -323,7 +323,14 @@ h2 {
   text-transform: uppercase;
   color: var(--muted);
 }
+.about .tech.tags { margin-top: 36px; }
 .about .chips { margin-top: 10px; }
+.about .keywords {
+  margin: 10px 0 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.6;
+}
 .tg {
   display: inline-flex;
   align-items: center;

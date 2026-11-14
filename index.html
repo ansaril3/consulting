@@ -2,18 +2,35 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <script>
-    try { if (localStorage.getItem("az-lang") === "en") document.documentElement.lang = "en"; } catch (e) {}
-  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ансар Жалялов — роботы, AI, технический руководитель</title>
   <meta name="description" content="Перевожу разработку на AI и запускаю роботов: агенты в Cursor и Claude, быстрее выпуск, меньше затрат на ИТ. Консалтинг и роли CTO, CIO, Head of Robotics.">
+  <script>
+    (function () {
+      var lang = "en";
+      try {
+        var saved = localStorage.getItem("az-lang-pref");
+        if (saved === "ru" || saved === "en") {
+          lang = saved;
+        } else {
+          var code = (navigator.languages && navigator.languages[0]) || navigator.language || "";
+          lang = /^ru\b/i.test(code) ? "ru" : "en";
+        }
+      } catch (e) {}
+      document.documentElement.lang = lang;
+      if (lang === "en") {
+        document.title = "Ansar Zhalyalov — Robotics, AI, and Engineering Leadership";
+        var meta = document.querySelector('meta[name="description"]');
+        if (meta) meta.setAttribute("content", "I get engineering teams working with AI and put robots into real operations: Cursor and Claude agents, faster releases, lower IT spend. Consulting, or a role as CTO, CIO, or Head of Robotics.");
+      }
+    })();
+  </script>
   <meta name="theme-color" content="#12141a">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=3">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -47,7 +64,7 @@
         <a href="#role"><span class="ru">Роль</span><span class="en">Role</span></a>
         <a href="#media"><span class="ru">Медиа</span><span class="en">Media</span></a>
         <a href="#approach"><span class="ru">Подход</span><span class="en">Approach</span></a>
-        <a class="nav-cta" href="#contact"><span class="ru">Обсудить</span><span class="en">Discuss</span></a>
+        <a class="nav-cta" href="#contact"><span class="ru">Обсудить</span><span class="en">Let's talk</span></a>
       </nav>
       <div class="lang" role="group" aria-label="Language">
         <button type="button" data-set-lang="ru" aria-pressed="true">RU</button>
@@ -70,23 +87,23 @@
       <div class="wrap hero-content">
         <p class="eyebrow">
           <span class="ru">AI · Робототехника · Техническое лидерство</span>
-          <span class="en">AI · Robotics · Technology Leadership</span>
+          <span class="en">AI · Robotics · Engineering leadership</span>
         </p>
         <h1>
           <span class="ru">Перевожу разработку на AI и запускаю роботов</span>
-          <span class="en">I move development onto AI and launch robots</span>
+          <span class="en">I bring AI into engineering teams and robots into production</span>
         </h1>
         <p class="lead">
           <span class="ru">15 лет в разработке и управлении. Внедряю AI, роботов, выбираю технологические решения и превращаю сложные инженерные задачи в работающие продукты.</span>
-          <span class="en">Fifteen years in engineering and management. I implement AI and robots, choose technology solutions, and turn complex engineering problems into working products.</span>
+          <span class="en">15 years building software and leading teams. I bring in AI and robots, pick the technology, and turn hard engineering problems into products that ship.</span>
         </p>
         <div class="hero-actions">
-          <a class="btn btn-lime" href="#contact"><span class="ru">Обсудить проект</span><span class="en">Discuss a project</span></a>
+          <a class="btn btn-lime" href="#contact"><span class="ru">Обсудить проект</span><span class="en">Talk about a project</span></a>
         </div>
         <ul class="stats">
-          <li><strong>50</strong><span class="ru">человек под управлением</span><span class="en">people managed at Beeline</span></li>
-          <li><strong>80%</strong><span class="ru">сокращение штата разработки в Celly</span><span class="en">smaller engineering staff at Celly</span></li>
-          <li><strong>15+</strong><span class="ru">внедренных проектов</span><span class="en">implemented projects</span></li>
+          <li><strong>50</strong><span class="ru">человек под управлением</span><span class="en">people I managed</span></li>
+          <li><strong>80%</strong><span class="ru">сокращение штата разработки в Celly</span><span class="en">smaller engineering team at Celly</span></li>
+          <li><strong>15+</strong><span class="ru">внедренных проектов</span><span class="en">projects shipped</span></li>
           <li><strong>$10 млн</strong><span class="ru">в год выручки в Билайне</span><span class="en">a year in revenue at Beeline</span></li>
         </ul>
       </div>
@@ -96,10 +113,10 @@
     <section id="about">
       <div class="wrap about">
         <figure class="portrait-wrap">
-          <img src="assets/teleop.jpg" width="1920" height="2560" alt="Ансар Жалялов в костюме телеоперации рядом с гуманоидным роботом" data-alt-ru="Ансар Жалялов в костюме телеоперации рядом с гуманоидным роботом" data-alt-en="Ansar Zhalyalov in a teleoperation suit next to a humanoid robot">
+          <img src="assets/teleop.jpg" width="1920" height="2560" alt="Ансар Жалялов в костюме телеоперации рядом с гуманоидным роботом" data-alt-ru="Ансар Жалялов в костюме телеоперации рядом с гуманоидным роботом" data-alt-en="Ansar Zhalyalov in a teleop suit beside a humanoid robot">
           <figcaption>
             <span class="ru">Управляю роботами и людьми :)</span>
-            <span class="en">I run robots and people :)</span>
+            <span class="en">I run the robots — and the people :)</span>
           </figcaption>
         </figure>
         <div>
@@ -107,20 +124,20 @@
           <h2><span class="ru">Жалялов Ансар</span><span class="en">Ansar Zhalyalov</span></h2>
           <p class="deck">
             <span class="ru">Технический руководитель. Провожу AI-трансформацию компании и запускаю роботов. Довожу до продакшена. Люблю метрики.</span>
-            <span class="en">A technical leader. I run a company's AI transformation and launch robots. I take it to production. I love metrics.</span>
+            <span class="en">Engineering leader. I take a company through the shift to AI and get robots into production. I see the work through, and I care about the numbers.</span>
           </p>
           <dl class="facts">
             <div>
               <dt><span class="ru">Фокус</span><span class="en">Focus</span></dt>
-              <dd><span class="ru">AI-разработка, роботы</span><span class="en">AI development, robots</span></dd>
+              <dd><span class="ru">AI-разработка, роботы</span><span class="en">AI in engineering, robotics</span></dd>
             </div>
             <div>
               <dt><span class="ru">Локация</span><span class="en">Location</span></dt>
-              <dd><span class="ru">Алматы/Москва</span><span class="en">Almaty/Moscow</span></dd>
+              <dd><span class="ru">Алматы/Москва</span><span class="en">Almaty, KZ</span></dd>
             </div>
             <div>
               <dt><span class="ru">Языки</span><span class="en">Languages</span></dt>
-              <dd><span class="ru">Английский/Русский</span><span class="en">English/Russian</span></dd>
+              <dd><span class="ru">Английский/Русский</span><span class="en">English and Russian</span></dd>
             </div>
             <div>
               <dt><span class="ru">Связь</span><span class="en">Contact</span></dt>
@@ -133,12 +150,13 @@
               </dd>
             </div>
           </dl>
-          <p class="tech"><span class="ru">Технологии</span><span class="en">Technology</span></p>
+          <p class="tech"><span class="ru">Технологии</span><span class="en">Tech</span></p>
           <ul class="chips">
-            <li>Robotics</li><li>Computer Vision</li><li>VLA</li><li>RL</li><li>LLM</li>
-            <li>Isaac Sim</li><li>Docker</li><li>Python</li><li>Web</li><li>AWS</li>
-            <li>Embedded</li><li>Hardware</li>
+            <li>AI</li><li>RL/VLA</li><li>LLM</li><li>Computer Vision</li><li>Robotics</li><li>Isaac Sim</li>
+            <li>Hardware</li><li>System Design</li><li>Python</li><li>React</li><li>Linux</li><li>Docker</li>
           </ul>
+          <p class="tech tags"><span class="ru">Теги</span><span class="en">Tags</span></p>
+          <p class="keywords">Leadership · Engineering management · Entrepreneurship · PhD · Silicon Valley</p>
         </div>
       </div>
     </section>
@@ -146,19 +164,19 @@
     <section id="results">
       <div class="wrap">
         <p class="kicker"><span class="ru">Результаты</span><span class="en">Results</span></p>
-        <h2><span class="ru">Где отвечал за результат</span><span class="en">Where I owned the outcome</span></h2>
+        <h2><span class="ru">Где отвечал за результат</span><span class="en">Where I was accountable for the results</span></h2>
 
         <article class="case">
           <div class="case-top">
             <h3 class="case-name"><img src="assets/logo-vkusvill.png" alt="" width="96" height="96">ВкусВилл</h3>
             <span class="case-when">2025 — 2026</span>
           </div>
-          <p class="case-role"><span class="ru">Руководитель направления гуманоидных роботов и AI</span><span class="en">Head of Robotics and AI</span></p>
+          <p class="case-role"><span class="ru">Руководитель направления гуманоидных роботов и AI</span><span class="en">Head of Humanoid Robotics and AI</span></p>
           <p>
             <span class="ru">Запустил направление с нуля: стратегия, команда из 15 человек, поиск и приёмка гуманоидов в Китае.
               Выстроил процессы разработки и сбора датасетов, автоматическую проверку моделей и аугментацию
               данных. Сначала проверяем модели в симуляции, потом на живых роботах. </span>
-            <span class="en">I launched the function from zero: strategy, a team of 15, and finding and accepting humanoids in China. I built the processes for development and dataset collection, automatic model checks, and data augmentation. We test models in simulation first, then on live robots.</span>
+            <span class="en">I started the group from scratch: the strategy, a team of 15, and sourcing humanoid robots in China and signing off on delivery. I set up how we build, how we collect datasets, how models get checked automatically, and how we augment the data. We test in simulation first, then on real robots.</span>
             </p>
         </article>
         <article class="case">
@@ -171,10 +189,9 @@
             <span class="ru">Стартовал с идеи, собрал команду и вместе вывели на рынок AI-микроскоп для анализа крови: смартфон, компьютерное
               зрение, облако и роботизированная система подачи стекол. Привлёк $500K, в том числе от Alchemist Accelerator в США. На
               клинических испытаниях точность 97%. Внедрили автоматизированное решение в десятки лабораторий и снизили затраты
-              клиентов на микроскопию на 70%. Затем перевёл разработку на агентов в
-              Cursor и Claude: штат разработки сократился на 80%, софт стал выходить быстрее. Стек: AWS, Docker, Python, Django,
+              клиентов на микроскопию на 70%. Затем перевёл разработку на агентов и выстроил процессы вокруг этого: штат разработки сократился на 80%, софт стал выходить быстрее. Стек: AWS, Docker, Python, Django,
               PostgreSQL, React, TensorFlow, Swift, OpenCV, механика и электроника.</span>
-            <span class="en">I started from an idea, built the team, and together we shipped an AI microscope for blood analysis: a phone, computer vision, the cloud, and a robotic slide-feeding system. I raised $500K, including from Alchemist Accelerator in the US. Clinical trials reached 97% accuracy. We deployed the automated solution in dozens of labs and cut clients' microscopy costs by 70%. I then moved development onto agents in Cursor and Claude: the engineering staff shrank by 80%, and software started shipping faster. Stack: AWS, Docker, Python, Django, PostgreSQL, React, TensorFlow, Swift, OpenCV, mechanics and electronics.</span>
+            <span class="en">I started with an idea, hired the team, and we brought an AI microscope for blood analysis to market: a phone, computer vision, the cloud, and a robot that feeds the slides. I raised $500K, including from Alchemist Accelerator in the US. In clinical trials it hit 97% accuracy. We installed it in dozens of labs and cut our customers' microscopy costs by 70%. Then I moved development onto agents and built the processes around that. Headcount fell 80%, and we shipped faster. Stack: AWS, Docker, Python, Django, PostgreSQL, React, TensorFlow, Swift, OpenCV, plus mechanical and electrical design.</span>
             </p>
         </article>
         <article class="case">
@@ -182,12 +199,12 @@
             <h3 class="case-name"><img src="assets/logo-beeline.png" alt="" width="96" height="96"><span class="ru">Билайн</span><span class="en">Beeline</span></h3>
             <span class="case-when">2011 — 2019</span>
           </div>
-          <p class="case-role"><span class="ru">Разработчик -> Технический менеджер</span><span class="en">Developer → technical manager</span></p>
+          <p class="case-role"><span class="ru">Разработчик -> Технический менеджер</span><span class="en">Developer, then engineering manager</span></p>
           <p>
             <span class="ru">Под управлением было 50 человек. Был связующим звеном между маркетингом, разработкой и подрядчиками: более 15 новых продуктов, вместе
               свыше $10 млн в год выручки и доступность 99,9%. Технические задания, тендеры, мониторинг, работа при сбоях и
               круглосуточная поддержка.</span>
-            <span class="en">I managed a team of 50. I was the link between marketing, engineering, and vendors: more than 15 new products, together over $10M a year in revenue, and 99.9% availability. Specs, tenders, monitoring, handling outages, and round-the-clock support.</span>
+            <span class="en">I led a team of 50 and sat between marketing, engineering, and vendors. We launched more than 15 products that together brought in over $10M a year, at 99.9% uptime. I owned the specs, the vendor bids, monitoring, incident response, and 24/7 support.</span>
             </p>
         </article>
       </div>
@@ -198,15 +215,15 @@
         <article class="role" id="role">
           <div class="role-grid">
             <div>
-              <p class="kicker"><span class="ru">Роль в компании</span><span class="en">A role in the company</span></p>
+              <p class="kicker"><span class="ru">Роль в компании</span><span class="en">A role on your team</span></p>
               <h2>CTO · CIO · Head of Robotics</h2>
               <p>
                 <span class="ru">Беру направление на себя: люди, бюджет и процессы.</span>
-                <span class="en">I take the function on: people, budget, and processes.</span>
+                <span class="en">I take ownership of it: the people, the budget, and how the work gets done.</span>
               </p>
             </div>
             <div>
-              <a class="btn btn-lime" href="#contact"><span class="ru">Обсудить роль</span><span class="en">Discuss the role</span></a>
+              <a class="btn btn-lime" href="#contact"><span class="ru">Обсудить роль</span><span class="en">Talk about the role</span></a>
             </div>
           </div>
         </article>
@@ -214,28 +231,28 @@
         <p class="kicker"><span class="ru">Проекты</span><span class="en">Projects</span></p>
         <p class="section-lead">
           <span class="ru">Если нужна конкретная задача, а не роль.</span>
-          <span class="en">When you need a specific job done, not a role.</span>
+          <span class="en">When you need a specific problem solved, not a full-time hire.</span>
         </p>
 
         <article class="svc">
           <span class="num">01</span>
           <div>
-            <h3><span class="ru">AI в разработке</span><span class="en">AI in engineering</span></h3>
-            <p><span class="ru">Перевожу команду разработки на AI-агентов.</span><span class="en">I move an engineering team onto AI agents.</span></p>
+            <h3><span class="ru">AI в разработке</span><span class="en">AI for engineering teams</span></h3>
+            <p><span class="ru">Перевожу команду разработки на AI-агентов.</span><span class="en">I get an engineering team working with AI agents.</span></p>
           </div>
-          <p class="who"><span class="label"><span class="ru">Для кого</span><span class="en">For</span></span><span class="ru">Компании со своей разработкой</span><span class="en">Companies with their own engineering team</span></p>
-          <p class="out"><span class="label"><span class="ru">Результат</span><span class="en">Outcome</span></span><span class="ru">Быстрее выпуск и меньше затрат на команду</span><span class="en">Faster delivery and a lower cost of the team</span></p>
+          <p class="who"><span class="label"><span class="ru">Для кого</span><span class="en">For</span></span><span class="ru">Компании со своей разработкой</span><span class="en">Companies with an in-house engineering team</span></p>
+          <p class="out"><span class="label"><span class="ru">Результат</span><span class="en">Outcome</span></span><span class="ru">Выпуск в 3–5 раз быстрее и меньше затрат на команду</span><span class="en">Ship 3–5× faster, and spend less on the team</span></p>
         </article>
         <article class="svc">
           <span class="num">02</span>
           <div>
             <h3><span class="ru">Роботизация</span><span class="en">Robotics</span></h3>
-            <p><span class="ru">Смотрю процесс и говорю, где робот окупится. Выбираю технологию и поставщиков, в том числе на заводах в Китае, и отделяю рабочее решение от красивого демо.</span><span class="en">I look at the process and say where a robot pays off. I choose the technology and the suppliers, including at factories in China, and separate a working solution from a polished demo.</span></p>
+            <p><span class="ru">Смотрю процесс и говорю, где робот окупится. Выбираю технологию и поставщиков, в том числе на заводах в Китае, и отделяю рабочее решение от красивого демо.</span><span class="en">I look at how the work gets done and tell you where a robot will pay for itself. I pick the technology and the vendors, including factories in China, and I can tell a system that works from a demo that only looks good.</span></p>
           </div>
-          <p class="who"><span class="label"><span class="ru">Для кого</span><span class="en">For</span></span><span class="ru">Ритейл, производство, логистика</span><span class="en">Retail, manufacturing, logistics</span></p>
-          <p class="out"><span class="label"><span class="ru">Результат</span><span class="en">Outcome</span></span><span class="ru">Робот в ежедневной операции</span><span class="en">A robot in a daily operation</span></p>
+          <p class="who"><span class="label"><span class="ru">Для кого</span><span class="en">For</span></span><span class="ru">Ритейл, производство, логистика</span><span class="en">Retail, manufacturing, and logistics</span></p>
+          <p class="out"><span class="label"><span class="ru">Результат</span><span class="en">Outcome</span></span><span class="ru">Робот в ежедневной операции</span><span class="en">A robot doing the job every day</span></p>
         </article>
-        <p class="svc-foot"><a class="btn" href="#contact"><span class="ru">Описать задачу</span><span class="en">Describe the task</span></a></p>
+        <p class="svc-foot"><a class="btn" href="#contact"><span class="ru">Описать задачу</span><span class="en">Tell me what you need</span></a></p>
       </div>
     </section>
 
@@ -251,39 +268,72 @@
             <span class="badge" aria-hidden="true">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><path d="M4 2.5v9l8-4.5-8-4.5z"/></svg>
             </span>
-            <span class="cap"><span class="ru">Гуманоид отдаёт заказ, RL</span><span class="en">A humanoid hands over an order, RL</span></span>
+            <span class="cap"><span class="ru">Гуманоид отдаёт заказ, RL</span><span class="en">A humanoid hands over an order, trained with RL</span></span>
           </button>
           <button class="tile tile-unitree" type="button" data-kind="video" data-src="assets/unitree.mp4" data-poster="assets/unitree-poster.jpg">
             <video muted loop playsinline preload="none" poster="assets/unitree-poster.jpg" data-src="assets/unitree.mp4"></video>
             <span class="badge" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><path d="M4 2.5v9l8-4.5-8-4.5z"/></svg></span>
-            <span class="cap"><span class="ru">Unitree перекладывает продукты, VLA</span><span class="en">Unitree moves products, VLA</span></span>
+            <span class="cap"><span class="ru">Unitree перекладывает продукты, VLA</span><span class="en">A Unitree robot rearranging products, VLA</span></span>
           </button>
           <button class="tile tile-arms" type="button" data-kind="video" data-src="assets/hero-arms.mp4" data-poster="assets/hero-poster.jpg">
             <video muted loop playsinline preload="none" poster="assets/hero-poster.jpg" data-src="assets/hero-arms.mp4"></video>
             <span class="badge" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><path d="M4 2.5v9l8-4.5-8-4.5z"/></svg></span>
-            <span class="cap"><span class="ru">Отрабатываем движения на манипуляторах, ROS2</span><span class="en">We practice motions on the arms, ROS2</span></span>
+            <span class="cap"><span class="ru">Отрабатываем движения на манипуляторах, ROS2</span><span class="en">Refining motions on the robot arms, ROS 2</span></span>
           </button>
           <button class="tile tile-sim" type="button" data-kind="video" data-src="assets/sim.mp4" data-poster="assets/sim-poster.jpg">
             <video muted loop playsinline preload="none" poster="assets/sim-poster.jpg" data-src="assets/sim.mp4"></video>
             <span class="badge" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><path d="M4 2.5v9l8-4.5-8-4.5z"/></svg></span>
-            <span class="cap"><span class="ru">Сборка в симуляции, до того как модель попадает на робота, Isaac Sim</span><span class="en">Assembly in simulation, before the model goes onto the robot, Isaac Sim</span></span>
+            <span class="cap"><span class="ru">Сборка в симуляции, до того как модель попадает на робота, Isaac Sim</span><span class="en">The assembly, rehearsed in simulation before the model ever goes on the robot, Isaac Sim</span></span>
           </button>
           <button class="tile tile-shot is-photo" type="button" data-kind="image" data-src="assets/episode.jpg">
-            <img src="assets/episode.jpg" width="1024" height="481" alt="Разбор эпизода: робот берёт хлеб из тостера" data-alt-ru="Разбор эпизода: робот берёт хлеб из тостера" data-alt-en="An episode review: the robot takes bread from the toaster">
-            <span class="cap"><span class="ru">Организация сбора и разметки данных для обучения робота, Pico</span><span class="en">Organizing data collection and labeling for robot training, Pico</span></span>
+            <img src="assets/episode.jpg" width="1024" height="481" alt="Разбор эпизода: робот берёт хлеб из тостера" data-alt-ru="Разбор эпизода: робот берёт хлеб из тостера" data-alt-en="Reviewing an episode: the robot takes bread out of the toaster">
+            <span class="cap"><span class="ru">Организация сбора и разметки данных для обучения робота, Pico</span><span class="en">Collecting and labeling data to train the robot, Pico</span></span>
           </button>
           <button class="tile tile-shot is-photo" type="button" data-kind="image" data-src="assets/cams-original.jpg">
-            <img src="assets/cams-original.jpg" width="1024" height="486" alt="Три камеры робота: голова и руки, снизу оригинальная запись" data-alt-ru="Три камеры робота: голова и руки, снизу оригинальная запись" data-alt-en="Three robot cameras, head and hands, with the original recording below">
-            <span class="cap"><span class="ru">Аугментация данных, NVIDIA Cosmos</span><span class="en">Data augmentation, NVIDIA Cosmos</span></span>
+            <img src="assets/cams-original.jpg" width="1024" height="486" alt="Три камеры робота: голова и руки, снизу оригинальная запись" data-alt-ru="Три камеры робота: голова и руки, снизу оригинальная запись" data-alt-en="Three robot cameras, head and hands, with the original recording underneath">
+            <span class="cap"><span class="ru">Аугментация данных, NVIDIA Cosmos</span><span class="en">Augmenting the training data, NVIDIA Cosmos</span></span>
           </button>
           <button class="tile tile-counter is-photo" type="button" data-kind="image" data-src="assets/counter.jpg">
             <img src="assets/counter.jpg" alt="">
-            <span class="cap"><span class="ru">Настольные манипуляторы, Aubo</span><span class="en">Desktop arms, Aubo</span></span>
+            <span class="cap"><span class="ru">Настольные манипуляторы, Aubo</span><span class="en">Benchtop robot arms, Aubo</span></span>
           </button>
           <button class="tile tile-me is-photo" type="button" data-kind="image" data-src="assets/with-robot.jpg">
-            <img src="assets/with-robot.jpg" width="1280" height="960" alt="Ансар Жалялов рядом с гуманоидом" data-alt-ru="Ансар Жалялов рядом с гуманоидом" data-alt-en="Ansar Zhalyalov next to a humanoid">
-            <span class="cap"><span class="ru">Приёмка роботов, завод Realman, Чанчжоу</span><span class="en">Robot acceptance, Realman factory, Changzhou</span></span>
+            <img src="assets/with-robot.jpg" width="1280" height="960" alt="Ансар Жалялов рядом с гуманоидом" data-alt-ru="Ансар Жалялов рядом с гуманоидом" data-alt-en="Ansar Zhalyalov standing next to a humanoid">
+            <span class="cap"><span class="ru">Приёмка роботов, завод Realman, Чанчжоу</span><span class="en">Accepting robots at the Realman factory in Changzhou</span></span>
           </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="ai">
+      <div class="wrap">
+        <p class="kicker"><span class="ru">Подход</span><span class="en">Approach</span></p>
+        <h2><span class="ru">Как внедряю AI в разработку</span><span class="en">How I get AI into the engineering process</span></h2>
+        <p class="section-lead">
+          <span class="ru">Агенты в редакторе сами по себе дают около 30–40% к скорости. Остальное появляется, когда AI встроен в процесс: репозиторий, автоматизация, тесты и то, кто отвечает за результат.</span>
+          <span class="en">Agents in the editor, on their own, get a team about 30–40% faster. The rest shows up when AI is built into the process: the repo, the automation, the tests, and who owns the outcome.</span>
+        </p>
+        <div class="steps">
+          <article class="step">
+            <span class="num">01</span>
+            <h3><span class="ru">Оценка</span><span class="en">Assessment</span></h3>
+            <p><span class="ru">Смотрю процессы и репозитории: что держится на людях и где агентам не на что опереться.</span><span class="en">I look at the processes and the repositories: what depends on specific people, and where agents would have nothing solid to build on.</span></p>
+          </article>
+          <article class="step">
+            <span class="num">02</span>
+            <h3><span class="ru">Автоматизация</span><span class="en">Automation</span></h3>
+            <p><span class="ru">Ставлю CI/CD и покрываю бизнес-логику автотестами. Изменение можно выпустить, и оно не ломает то, что уже работает.</span><span class="en">I put CI/CD in place and cover the business logic with automated tests. A change can ship without breaking what already works.</span></p>
+          </article>
+          <article class="step">
+            <span class="num">03</span>
+            <h3><span class="ru">Команда</span><span class="en">The team</span></h3>
+            <p><span class="ru">Интервьюирую людей на навык работы с AI-инструментами. Остаются те, кто готов меняться. Процесс больше не держится на незаменимых экспертах.</span><span class="en">I interview people on how they use AI tools and keep those who are ready to change how they work. The process no longer depends on irreplaceable experts.</span></p>
+          </article>
+          <article class="step">
+            <span class="num">04</span>
+            <h3><span class="ru">Результат</span><span class="en">Ownership</span></h3>
+            <p><span class="ru">Каждый разработчик становится fullstack и отвечает за бизнес-результат. Продакт добавляет фичи сам, и продукт от этого не ломается.</span><span class="en">Every developer becomes fullstack and owns the business outcome. A product manager can add features on their own, and the product holds.</span></p>
+          </article>
         </div>
       </div>
     </section>
@@ -291,31 +341,31 @@
     <section id="approach">
       <div class="wrap">
         <p class="kicker"><span class="ru">Подход</span><span class="en">Approach</span></p>
-        <h2><span class="ru">Как запускаю робота в процесс</span><span class="en">How I launch a robot into a process</span></h2>
+        <h2><span class="ru">Как запускаю робота в процесс</span><span class="en">How I get a robot into the daily work</span></h2>
         <p class="section-lead">
           <span class="ru">Робот на стенде ещё ничего не доказывает. Нужно связать задачу, технологию и процессы так, чтобы операция повторялась каждый день.</span>
-          <span class="en">A robot on a stand still proves nothing. The task, the technology, and the processes have to fit together so the operation repeats every day.</span>
+          <span class="en">A robot on a demo stand doesn't prove much. The job, the technology, and the process have to fit together so the same work happens every day.</span>
         </p>
         <div class="steps">
           <article class="step">
             <span class="num">01</span>
-            <h3><span class="ru">Нужен ли тут робот?</span><span class="en">Does a robot belong here?</span></h3>
-            <p><span class="ru">Оцениваю задачу, площадку, людей и ограничения. Считаю, окупится ли это.</span><span class="en">I assess the task, the site, the people, and the constraints. I work out whether it pays off.</span></p>
+            <h3><span class="ru">Нужен ли тут робот?</span><span class="en">Does a robot make sense here?</span></h3>
+            <p><span class="ru">Оцениваю задачу, площадку, людей и ограничения. Считаю, окупится ли это.</span><span class="en">I look at the job, the floor, the people, and the constraints, and I run the numbers on whether it pays off.</span></p>
           </article>
           <article class="step">
             <span class="num">02</span>
-            <h3><span class="ru">Поставка</span><span class="en">Supply</span></h3>
-            <p><span class="ru">Робот, модель, подрядчик. Если нужно — поездка и проверка на месте.</span><span class="en">The robot, the model, the contractor. If needed, a trip and an on-site check.</span></p>
+            <h3><span class="ru">Поставка</span><span class="en">Sourcing</span></h3>
+            <p><span class="ru">Робот, модель, подрядчик. Если нужно — поездка и проверка на месте.</span><span class="en">The robot, the model, and the vendor. If it matters, I go and check it in person.</span></p>
             </article>
           <article class="step">
             <span class="num">03</span>
             <h3><span class="ru">Пилот</span><span class="en">Pilot</span></h3>
-            <p><span class="ru">Симуляция, проверка на площадке, обучение. Сразу договариваемся, что считать успехом.</span><span class="en">Simulation, an on-site check, and training. We agree up front what counts as success.</span></p>
+            <p><span class="ru">Симуляция, проверка на площадке, обучение. Сразу договариваемся, что считать успехом.</span><span class="en">Simulation, a trial on the floor, and training. We agree up front what success looks like.</span></p>
           </article>
           <article class="step">
             <span class="num">04</span>
             <h3><span class="ru">Продакшн</span><span class="en">Production</span></h3>
-            <p><span class="ru">Персонал, правила, безопасность и запчасти. Допустимый простой и кто приезжает, когда робот встал.</span><span class="en">Staff, rules, safety, and spare parts. We lock in acceptable downtime and who comes when the robot stops before the launch.</span></p>
+            <p><span class="ru">Персонал, правила, безопасность и запчасти. Допустимый простой и кто приезжает, когда робот встал.</span><span class="en">The people, the rules, safety, and spare parts. How much downtime is acceptable, and who shows up when the robot stops.</span></p>
             </article>
         </div>
       </div>
@@ -326,11 +376,11 @@
         <p class="kicker"><span class="ru">Профиль</span><span class="en">Profile</span></p>
         <h2><span class="ru">Образование</span><span class="en">Education</span></h2>
         <ul class="plain">
-          <li><span class="ru"><strong>Beyond Taylor.</strong> Как строить компанию на основе ценности для клиента: автономия команд, децентрализация решений и предпринимательская культура, 2025.</span><span class="en"><strong>Beyond Taylor.</strong> How to build a company around value for the customer: team autonomy, decentralized decisions, and an entrepreneurial culture, 2025.</span></li>
-          <li><span class="ru"><strong>Финалист «Лидеры России».</strong> Всероссийский конкурс управленцев, 2020.</span><span class="en"><strong>Leaders of Russia finalist.</strong> A national competition for managers, 2020.</span></li>
-          <li><span class="ru"><strong>Alchemist Accelerator.</strong> Кремниевая долина: как создавать технологическую компанию, продажи и сбор команды, 2019.</span><span class="en"><strong>Alchemist Accelerator.</strong> Silicon Valley: how to create a technology company, sales, and hiring a team, 2019.</span></li>
-          <li><span class="ru"><strong>Кандидат наук, биофизика.</strong> ЦТП ФХФ РАН, молекулярная биология, 2018.</span><span class="en"><strong>PhD (Candidate of Sciences), biophysics.</strong> ЦТП ФХФ РАН, molecular biology, 2018.</span></li>
-          <li><span class="ru"><strong>Магистр, медицинская физика.</strong> Физический факультет МГУ, 2013.</span><span class="en"><strong>Master's, medical physics.</strong> MSU Faculty of Physics, 2013.</span></li>
+          <li><span class="ru"><strong>Beyond Taylor.</strong> Как строить компанию на основе ценности для клиента: автономия команд, децентрализация решений и предпринимательская культура, 2025.</span><span class="en"><strong>Beyond Taylor.</strong> Building a company around what the customer actually values: teams that decide for themselves, decisions made close to the work, and a culture of ownership. 2025.</span></li>
+          <li><span class="ru"><strong>Финалист «Лидеры России».</strong> Всероссийский конкурс управленцев, 2020.</span><span class="en"><strong>Leaders of Russia finalist.</strong> A nationwide competition for managers, 2020.</span></li>
+          <li><span class="ru"><strong>Alchemist Accelerator,</strong> Сан-Франциско: как создавать технологическую компанию, продажи и сбор команды, 2019.</span><span class="en"><strong>Alchemist Accelerator,</strong> San Francisco: a program on starting a tech company, selling, and hiring the team. 2019.</span></li>
+          <li><span class="ru"><strong>Кандидат наук, биофизика.</strong> ЦТП ФХФ РАН, молекулярная биология, 2018.</span><span class="en"><strong>PhD in biophysics.</strong> Center for Theoretical Problems of Physicochemical Pharmacology, Russian Academy of Sciences. Molecular biology, 2018.</span></li>
+          <li><span class="ru"><strong>Магистр, медицинская физика.</strong> Физический факультет МГУ, 2013.</span><span class="en"><strong>Master's in medical physics.</strong> Faculty of Physics, Moscow State University, 2013.</span></li>
         </ul>
       </div>
     </section>
@@ -349,7 +399,7 @@
   <footer class="footer">
     <div class="wrap">
       <span>© 2026 <span class="ru">Ансар Жалялов</span><span class="en">Ansar Zhalyalov</span></span>
-      <span><span class="ru">Техническое лидерство, AI в разработке, роботы</span><span class="en">Technology leadership, AI in engineering, robots</span></span>
+      <span><span class="ru">Техническое лидерство, AI в разработке, роботы</span><span class="en">Engineering leadership, AI for product teams, and robots</span></span>
     </div>
   </footer>
 
@@ -362,6 +412,6 @@
     </div>
     <div id="lightbox-stage"></div>
   </dialog>
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=3"></script>
 </body>
 </html>
